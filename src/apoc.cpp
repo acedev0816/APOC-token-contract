@@ -100,4 +100,30 @@ void token::transfer( const name&    from,
     add_balance( to, quantity, payer );
 }
 
+void token::sub_balance( const name& owner, const asset& value ) {
+   accounts from_acnts( get_self(), owner.value );
+
+   const auto& from = from_acnts.get( value.symbol.code().raw(), "no balance object found" );
+   check( from.balance.amount >= value.amount, "overdrawn balance" );
+
+   from_acnts.modify( from, owner, [&]( auto& a ) {
+         a.balance -= value;
+      });
+}
+
+void token::add_balance( const name& owner, const asset& value, const name& ram_payer )
+{
+   accounts to_acnts( get_self(), owner.value );
+   auto to = to_acnts.find( value.symbol.code().raw() );
+   if( to == to_acnts.end() ) {
+      to_acnts.emplace( ram_payer, [&]( auto& a ){
+        a.balance = value;
+      });
+   } else {
+      to_acnts.modify( to, same_payer, [&]( auto& a ) {
+        a.balance += value;
+      });
+   }
+}
+
 } /// namespace eosio
