@@ -156,4 +156,21 @@ void token::close( const name& owner, const symbol& symbol )
    acnts.erase( it );
 }
 
+std::string token::tokensymbol()
+{
+   return "APOC";
+}
+
+std::string token::tokenname()
+{
+   return "Apocalypseium";
+}
+
+asset token::totalsupply()
+{
+   auto sym_code = eosio::symbol_code("APOC");
+   auto contract_address = get_self();
+   return get_supply( contract_address, sym_code );
+}
+
 } /// namespace eosio

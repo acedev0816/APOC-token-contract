@@ -14,18 +14,19 @@ namespace eosio {
    using std::string;
 
    /**
-    * @defgroup eosiotoken eosio.token
+    * @defgroup eosiotoken apoc.token
     * @ingroup eosiocontracts
     *
-    * eosio.token contract
+    * apoc.token contract
     *
-    * @details eosio.token contract defines the structures and actions that allow users to create, issue, and manage
+    * @details apoc.token contract defines the structures and actions that allow users to create, issue, and manage
     * tokens on eosio based blockchains.
     * @{
     */
-   class [[eosio::contract("apoc")]] token : public contract {
+   class [[eosio::contract("apoc.token")]] token : public contract {
       public:
          using contract::contract;
+         
 
          /**
           * Create action.
@@ -112,6 +113,27 @@ namespace eosio {
           */
          [[eosio::action]]
          void close( const name& owner, const symbol& symbol );
+
+         /**
+         * Get Symbol action
+         * returns string for current symbol
+         */
+         [[eosio::action]]
+         std::string tokensymbol();
+
+         /**
+         * Get name action
+         * returns string for token name
+         */
+         [[eosio::action]]
+         std::string tokenname();
+
+         /**
+         * Get Total Supply action
+         * returns asset for total supply
+         */
+         [[eosio::action]]
+         asset totalsupply();
 
          /**
           * Get supply method.
