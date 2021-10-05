@@ -129,11 +129,18 @@ namespace eosio {
          std::string tokenname();
 
          /**
-         * Get Total Supply action
+         * Get total supply action
          * returns asset for total supply
          */
          [[eosio::action]]
          asset totalsupply();
+
+         /**
+         * Get balance action
+         * returns asset for balance
+         */
+         [[eosio::action]]
+         asset balance(const name & owner);
 
          /**
           * Get supply method.

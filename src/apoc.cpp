@@ -173,4 +173,11 @@ asset token::totalsupply()
    return get_supply( contract_address, sym_code );
 }
 
+asset token::balance(const name & owner)
+{
+   auto sym_code = eosio::symbol_code("APOC");
+   auto contract_address = get_self();
+   return get_balance( contract_address, owner, sym_code);
+}
+
 } /// namespace eosio
