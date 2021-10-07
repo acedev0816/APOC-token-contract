@@ -1,1 +1,4 @@
 build
+.eosproj
+*.abi
+*.wasm
