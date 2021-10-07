@@ -1,0 +1,19 @@
+{
+  "name": "apoc-token-contract",
+  "version": "1.0.0",
+  "description": "Testing the apoc token smart contract with Hydra",
+  "main": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@klevoya/hydra": "^1.3.0",
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.2"
+  },
+  "keywords": [],
+  "author": "Nero Zato",
+  "license": "The Apocalyptics"
+}

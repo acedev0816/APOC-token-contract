@@ -1,0 +1,12 @@
+{
+    "alice": [
+        {
+            "balance": "1.12345 APOC"
+        }
+    ],
+    "bob": [
+        {
+            "balance": "0.00000 APOC"
+        }
+    ]
+}
