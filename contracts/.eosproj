@@ -6,7 +6,7 @@
   "cdt": "v1.7.0",
   "output": "",
   "scripts": {
-    "build": "eosio-cpp -abigen -I ./include -R ./resource -contract apoc.token -o build/apoc.token.wasm src/apoc.token.cpp"
+    "build": ""
   },
   "deploy": {
     "target": "both",

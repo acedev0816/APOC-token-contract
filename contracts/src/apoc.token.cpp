@@ -21,7 +21,6 @@ void token::create( const name&   issuer,
        s.max_supply    = maximum_supply;
        s.issuer        = issuer;
     });
-    printf("create\n");
 }
 
 void token::issue( const name& to, const asset& quantity, const string& memo )
@@ -156,14 +155,19 @@ void token::close( const name& owner, const symbol& symbol )
    acnts.erase( it );
 }
 
+std::string token::tokenname()
+{
+   return "Apocalypseium";
+}
+
 std::string token::tokensymbol()
 {
    return "APOC";
 }
 
-std::string token::tokenname()
+std::uint64_t token::decimals()
 {
-   return "Apocalypseium";
+   return 5;
 }
 
 asset token::totalsupply()
@@ -173,7 +177,7 @@ asset token::totalsupply()
    return get_supply( contract_address, sym_code );
 }
 
-asset token::balance(const name & owner)
+asset token::balanceof(const name & owner)
 {
    auto sym_code = eosio::symbol_code("APOC");
    auto contract_address = get_self();

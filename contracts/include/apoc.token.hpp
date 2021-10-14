@@ -117,32 +117,39 @@ namespace eosio {
          void close( const name& owner, const symbol& symbol );
 
          /**
-         * Get Symbol action
-         * returns string for current symbol
-         */
-         [[eosio::action]]
-         std::string tokensymbol();
-
-         /**
-         * Get name action
+         * Get token name action
          * returns string for token name
          */
          [[eosio::action]]
          std::string tokenname();
 
          /**
+         * Get token symbol action
+         * returns string for token symbol
+         */
+         [[eosio::action]]
+         std::string tokensymbol();
+
+         /**
+         * Get decimals action
+         * returns decimals of token
+         */
+         [[eosio::action]]
+         uint64_t decimals();
+
+         /**
          * Get total supply action
-         * returns asset for total supply
+         * returns total supply of token
          */
          [[eosio::action]]
          asset totalsupply();
 
          /**
          * Get balance action
-         * returns asset for balance
+         * returns balance of owner
          */
          [[eosio::action]]
-         asset balance(const name & owner);
+         asset balanceof(const name & owner);
 
          /**
           * Get supply method.

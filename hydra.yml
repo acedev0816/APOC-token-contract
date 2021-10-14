@@ -1,7 +1,7 @@
 contracts:
   apoc.token:
-    abi: contracts/build/apoc.token.abi
+    abi: contracts/apoc.token.abi
     fixturesDir: tests/fixtures/apoc.token
     name: apoc.token
-    wasm: contracts/build/apoc.token.wasm
+    wasm: contracts/apoc.token.wasm
 options: null

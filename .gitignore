@@ -115,4 +115,5 @@ dist
 .pnp.*
 
 # custom
-contracts/build/*
+*.abi
+*.wasm
