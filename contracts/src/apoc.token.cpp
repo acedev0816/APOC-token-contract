@@ -165,7 +165,7 @@ std::string token::tokensymbol()
    return "APOC";
 }
 
-std::uint64_t token::decimals()
+std::int64_t token::decimals()
 {
    return 5;
 }

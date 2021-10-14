@@ -135,7 +135,7 @@ namespace eosio {
          * returns decimals of token
          */
          [[eosio::action]]
-         uint64_t decimals();
+         std::int64_t decimals();
 
          /**
          * Get total supply action
