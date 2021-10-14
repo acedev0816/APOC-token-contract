@@ -5,8 +5,6 @@
 
 #include <string>
 
-#include "hydra.hpp"
-
 namespace eosiosystem {
    class system_contract;
 }
@@ -209,26 +207,6 @@ namespace eosio {
 
          void sub_balance( const name& owner, const asset& value );
          void add_balance( const name& owner, const asset& value, const name& ram_payer );
-      public:
-         // the HYDRA_FIXTURE_ACTION macro adds the hydra action
-         // to the contract and the ABI
-         // each table to load data for must be specified here
-         // the macro takes a list of tuples, each tuple defining a table
-         // ((table_name)(struct_name)(multi_index_typedef))
-         // the same order as the template parameters & name of the multi_index typedef
-         HYDRA_FIXTURE_ACTION(
-            ((accounts)(account)(accounts))
-            ((stat)(currency_stats)(stats))
-         )
    };
    /** @}*/ // end of @defgroup eosiotoken apoc
-
-   // if a custom apply function is used, the hydraload action can be exposed
-   // using the HYDRA_APPLY_FIXTURE_ACTION(CONTRACT_CLASS_NAME) macro
-   extern "C" void apply(uint64_t receiver, uint64_t code, uint64_t action) {
-      if (code == receiver) {
-         HYDRA_APPLY_FIXTURE_ACTION(token)
-         switch (action) { EOSIO_DISPATCH_HELPER(token, (create)(issue)(transfer)) }
-      }
-   }
 } /// namespace eosio
