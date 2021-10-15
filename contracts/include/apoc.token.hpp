@@ -115,41 +115,6 @@ namespace eosio {
          void close( const name& owner, const symbol& symbol );
 
          /**
-         * Get token name action
-         * returns string for token name
-         */
-         [[eosio::action]]
-         std::string tokenname();
-
-         /**
-         * Get token symbol action
-         * returns string for token symbol
-         */
-         [[eosio::action]]
-         std::string tokensymbol();
-
-         /**
-         * Get decimals action
-         * returns decimals of token
-         */
-         [[eosio::action]]
-         std::int64_t decimals();
-
-         /**
-         * Get total supply action
-         * returns total supply of token
-         */
-         [[eosio::action]]
-         asset totalsupply();
-
-         /**
-         * Get balance action
-         * returns balance of owner
-         */
-         [[eosio::action]]
-         asset balanceof(const name & owner);
-
-         /**
           * Get supply method.
           *
           * @details Gets the supply for token `sym_code`, created by `token_contract_account` account.
