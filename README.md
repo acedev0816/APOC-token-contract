@@ -1,6 +1,7 @@
 # apoc.token contract
 
-An token contract tested with [Hydra](https://docs.klevoya.com/hydra).
+Smart contract for fungible token based on EOS blockchain.
+Tested with [Hydra](https://docs.klevoya.com/hydra).
 
 To install the dependencies run:
 
